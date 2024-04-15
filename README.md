@@ -1,5 +1,5 @@
 # Roman Numeral Converter
-This JavaScript application converts Arabic numerals (numbers we use everyday) to their Roman numeral equivalents. It serves as a certification project for the FreeCodeCamp Javascript Algorithms and Data Structures course.
+This JavaScript application converts Arabic numerals (numbers we use everyday) to their Roman numeral equivalents. It serves as a certification project for the FreeCodeCamp Javascript Algorithms and Data Structures course. The site can be accessed [here](https://kyze-roman-numeral-converter.netlify.app).
 
 ![Screenshot of the website](./screenshots/screenshot1.png)
 
