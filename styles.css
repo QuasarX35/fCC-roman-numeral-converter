@@ -1,0 +1,237 @@
+:root {
+    --text: #090202;
+    --background: #fef7f7;
+    --primary: #9d2a2c;
+    --secondary: #e09f3e;
+    --accent: #e3c45a;
+
+    --pillar-width: 300px;
+
+    --pillar-layer1-height: 25px;
+    --pillar-layer1-width: calc(var(--pillar-width) - 70px);
+    --pillar-layer1-bg-color: #bfb3af;
+
+    --pillar-layer2-height: 25px;
+    --pillar-layer2-width: calc(var(--pillar-layer1-width) - 50px);
+    --pillar-layer2-bg-color: #cec5c2;
+    --pillar-layer2-slant-width: 15px;
+
+    --pillar-layer3-height: 25px;
+    --pillar-layer3-width: calc(var(--pillar-layer2-width) - 20px);
+    --pillar-layer3-bg-color: #e2dedc;
+    --pillar-layer3-border-radius: 10px;
+
+    --pillar-middle-section-width: calc(var(--pillar-layer3-width) - 15px);
+    --pillar-middle-section-bg-color: #cec5c2;
+}
+
+*,
+*::before,
+*::after {
+    font-family: "Crimson Pro", serif;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+body {
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 62.5%;
+}
+
+h1 {
+    font-size: clamp(20px, 5em, 8em);
+    text-align: center;
+    font-weight: 500;
+}
+
+.error {
+    color: red;
+}
+
+.pillar {
+    height: 100%;
+    max-width: var(--pillar-width);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 auto;
+}
+
+@media screen and (max-width: 940px) {
+    .pillar {
+        display: none;
+    }
+}
+
+.pillar .layer1,
+.layer6 {
+    height: var(--pillar-layer1-height);
+    width: var(--pillar-layer1-width);
+    background-color: var(--pillar-layer1-bg-color);
+}
+
+.pillar .layer2,
+.layer5 {
+    /* width of slanted part */
+    border-left: var(--pillar-layer2-slant-width) solid transparent;
+    border-right: var(--pillar-layer2-slant-width) solid transparent;
+    height: 0;
+    width: var(--pillar-layer2-width);
+}
+
+/* https://stackoverflow.com/questions/12710708/rounded-trapezoid-with-css */
+.pillar .layer2 {
+    /* height of layer */
+    border-top: var(--pillar-layer2-height) solid var(--pillar-layer2-bg-color);
+}
+
+.pillar .layer5 {
+    /* height of layer */
+    border-bottom: var(--pillar-layer2-height) solid var(--pillar-layer2-bg-color);
+}
+
+.pillar .layer3,
+.layer4 {
+    height: var(--pillar-layer3-height);
+    width: var(--pillar-layer3-width);
+    background-color: var(--pillar-layer3-bg-color);
+}
+
+.pillar .layer3 {
+    border-radius: 0 0 var(--pillar-layer3-border-radius) var(--pillar-layer3-border-radius);
+}
+
+.pillar .layer4 {
+    border-radius: var(--pillar-layer3-border-radius) var(--pillar-layer3-border-radius) 0 0;
+}
+
+.pillar .layer1,
+.layer2,
+.layer3,
+.layer4,
+.layer5,
+.layer6 {
+    /* https://stackoverflow.com/questions/90178/make-a-div-fill-the-height-of-the-remaining-screen-space */
+    flex: 0 1 auto;
+    /* The above is shorthand for:
+    flex-grow: 0,
+    flex-shrink: 1,
+    flex-basis: auto
+    */
+}
+
+.pillar .middle-section {
+    width: var(--pillar-middle-section-width);
+    background-color: var(--pillar-middle-section-bg-color);
+    flex: 1 1 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.pillar-indent {
+    width: 15px;
+    height: 90%;
+    background-color: #e2dedc;
+    border-radius: 10px;
+}
+
+.main-section {
+    height: 100%;
+    border-image: linear-gradient(var(--secondary),
+            var(--accent)) 30;
+    border-right: 0.6em solid var(--accent);
+    border-left: 0.6em solid var(--accent);
+    background-color: var(--background);
+    flex: 1 1 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#output {
+    font-size: 2.5rem;
+    padding: 0.5em;
+    border: 5px solid var(--accent);
+    border-radius: 15px;
+    flex-wrap: wrap;
+    margin-top: -2em;
+    /* top | right | bottom | left */
+    margin: -2em 0.5em 0 0.5em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1082px) {
+    .input {
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+
+label {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+input {
+    border: none;
+    border-bottom: 2px solid var(--text);
+    outline: none;
+    background-color: inherit;
+    font-size: 2rem;
+    text-align: center;
+    margin-left: 0.5em;
+}
+
+button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(to right,
+            var(--accent),
+            var(--secondary));
+    border: 2px solid var(--primary);
+    /* top | right | bottom | left */
+    padding: 0 1em .2em 1em;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #5c5959;
+}
+
+button:active {
+    color: var(--background);
+    background: none;
+    background-color: var(--primary);
+}
+
+footer {
+    color: var(--text);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.github-link {
+    color: var(--primary);
+}

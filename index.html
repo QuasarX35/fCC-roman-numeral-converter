@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Roman Numeral Converter</title>
+</head>
+
+<body>
+    <div class="pillar">
+        <div class="layer1"></div>
+        <div class="layer2"></div>
+        <div class="layer3"></div>
+        <div class="middle-section">
+            <div class="pillar-indent"></div>
+            <div class="pillar-indent"></div>
+            <div class="pillar-indent"></div>
+            <div class="pillar-indent"></div>
+        </div>
+        <div class="layer4"></div>
+        <div class="layer5"></div>
+        <div class="layer6"></div>
+    </div>
+    <div class="main-section">
+        <h1 class="title">Roman Numeral Converter</h1>
+        <div id="output" hidden>
+        </div>
+        <form onsubmit="return checkInput(event)">
+            <div class="input">
+                <label for="number">Enter your number:</label>
+                <input type="number" id="number" />
+            </div>
+            <button id="convert-btn" type="button">Convert</button>
+        </form>
+        <footer>
+            <p>Made by <a href="https://github.com/QuasarX35/roman-numeral-converter"
+                    class="github-link">QuasarX35</a> © 2024. All rights reserved.</p>
+        </footer>
+    </div>
+    <div class="pillar">
+        <div class="layer1"></div>
+        <div class="layer2"></div>
+        <div class="layer3"></div>
+        <div class="middle-section">
+            <div class="pillar-indent"></div>
+            <div class="pillar-indent"></div>
+            <div class="pillar-indent"></div>
+            <div class="pillar-indent"></div>
+        </div>
+        <div class="layer4"></div>
+        <div class="layer5"></div>
+        <div class="layer6"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
